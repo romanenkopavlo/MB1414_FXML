@@ -31,8 +31,8 @@ public class Mb1414 extends LiaisonSerie {
                 Vitesse = %s sm/s
                 Acceleration = %s sm square
                 %n""", dfDistance.format(distance), dfDistance.format(distanceDelta), dfDeltaT.format((Duration.between(tInit,tFinal).toMillis())*0.001), dfVitesseAcceleration.format(vitesseFinal), dfVitesseAcceleration.format(acceleration));
+            tInit=tFinal;
         }
-        tInit=tFinal;
     }
 
     private void calcul(SerialPortEvent event) {
