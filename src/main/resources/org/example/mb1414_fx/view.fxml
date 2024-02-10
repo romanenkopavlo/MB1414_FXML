@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="638.0" prefWidth="933.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.mb1414_fx.Controller">
+    <LineChart fx:id="lineChart" layoutX="18.0" layoutY="41.0" prefHeight="460.0" prefWidth="890.0">
+      <xAxis>
+          <CategoryAxis fx:id="tempsX" label="Temps" prefHeight="81.0" prefWidth="813.0" side="BOTTOM" />
+      </xAxis>
+      <yAxis>
+          <NumberAxis fx:id="distanceY" label="Vitesse" side="LEFT" />
+      </yAxis>
+    </LineChart>
+   <CheckBox fx:id="checkBox" layoutX="541.0" layoutY="575.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="52.0" text="Stop" />
+   <Button fx:id="button" layoutX="399.0" layoutY="571.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="105.0" text="Effacer" />
+</AnchorPane>
