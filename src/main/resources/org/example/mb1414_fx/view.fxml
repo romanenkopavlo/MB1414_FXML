@@ -10,7 +10,7 @@
           <CategoryAxis fx:id="tempsX" label="Temps" prefHeight="81.0" prefWidth="813.0" side="BOTTOM" />
       </xAxis>
       <yAxis>
-          <NumberAxis fx:id="distanceY" label="Vitesse" side="LEFT" />
+          <NumberAxis fx:id="vitesseY" label="Vitesse" side="LEFT" />
       </yAxis>
     </LineChart>
    <CheckBox fx:id="checkBox" layoutX="541.0" layoutY="575.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="52.0" text="Stop" />

@@ -27,7 +27,7 @@ public class Controller implements Initializable {
     @FXML
     CategoryAxis tempsX;
     @FXML
-    NumberAxis distanceY;
+    NumberAxis vitesseY;
     @FXML
     LineChart<String, Number> lineChart;
     XYChart.Series<String, Number> series = new XYChart.Series<>();
