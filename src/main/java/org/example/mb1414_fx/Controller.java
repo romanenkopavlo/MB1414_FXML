@@ -32,7 +32,7 @@ public class Controller implements Initializable {
     LineChart<String, Number> lineChart;
     XYChart.Series<String, Number> series = new XYChart.Series<>();
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
-    String port = "COM3";
+    String port = "COM5";
     Mb1414 mb1414;
     Timer timer;
     boolean stop = false;
@@ -66,9 +66,7 @@ public class Controller implements Initializable {
                         try {
                             mb1414.initialisationCapteur(port);
                             Thread.sleep(500);
-                            if (mb1414.getDistanceDelta() != 0) {
-                                series.getData().add(new XYChart.Data<>(simpleDateFormat.format(new Date()), mb1414.getVitesseFinal()));
-                            }
+                            series.getData().add(new XYChart.Data<>(simpleDateFormat.format(new Date()), mb1414.getVitesseFinal()));
                             if (series.getData().size() > POINTS) {
                                 series.getData().remove(0);
                             }

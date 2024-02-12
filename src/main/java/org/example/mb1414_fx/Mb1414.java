@@ -22,8 +22,7 @@ public class Mb1414 extends LiaisonSerie {
     public void serialEvent(SerialPortEvent event) {
         tFinal=Instant.now();
         calcul(event);
-        if (distanceDelta != 0) {
-            System.out.printf("""
+        System.out.printf("""
                 %s
                 __________________________
                 Delta d = %s
@@ -31,8 +30,7 @@ public class Mb1414 extends LiaisonSerie {
                 Vitesse = %s sm/s
                 Acceleration = %s sm square
                 %n""", dfDistance.format(distance), dfDistance.format(distanceDelta), dfDeltaT.format((Duration.between(tInit,tFinal).toMillis())*0.001), dfVitesseAcceleration.format(vitesseFinal), dfVitesseAcceleration.format(acceleration));
-            tInit=tFinal;
-        }
+        tInit=tFinal;
     }
 
     private void calcul(SerialPortEvent event) {
@@ -50,6 +48,8 @@ public class Mb1414 extends LiaisonSerie {
             vitesseDelta = vitesseFinal - vitesseInit;
             vitesseInit = vitesseFinal;
             acceleration = (((vitesseDelta))/((Duration.between(tInit, tFinal).toMillis()) * 0.001));
+        } else {
+            vitesseFinal = 0;
         }
     }
 
